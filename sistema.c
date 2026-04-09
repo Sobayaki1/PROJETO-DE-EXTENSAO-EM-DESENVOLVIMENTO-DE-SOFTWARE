@@ -88,9 +88,8 @@ int main(){
     do{
         printf("\n=== MENU ===\n");
         printf("1. Cadastrar produto\n");
-        printf("2. Listar produtos\n");
-        printf("3. Buscar produto\n");
-        printf("4. Baixa no estoque\n");
+        printf("2. Consultar Estoque\n");
+        printf("3. Baixa no estoque\n");
         printf("0. Sair\n");
         printf("Escolha: ");
         scanf("%d", &opcao);
@@ -100,12 +99,9 @@ int main(){
                 cadastrarProduto();
                 break;
             case 2:
-                listaritem();
+                consultaEstoque();
                 break;
             case 3:
-                buscar();
-                break;
-            case 4:
                 baixaEstoque();
                 break;
             case 0:
