@@ -3,7 +3,6 @@
 
 int opcao;
 
-
 typedef struct{ 
 
     char nomeResponsavel;
@@ -66,7 +65,6 @@ void cadastrarProduto(){ //cadastra um produto, cria um id
     totalProdutos++;
     p.idProduto++;
 
-
 }
 
 void adicionarProduto(){ //adiciona produto ao estoque
@@ -77,7 +75,7 @@ void cadastrarPedido(){ //cadastra pedido, com item e cria um id
   
 }
 
-void consultaEstoque(){  // Caio** mostra itens de estoque e da opcao de busca
+void consultaEstoque(){ //Caio** mostra itens de estoque e da opcao de busca
    
 }
 
