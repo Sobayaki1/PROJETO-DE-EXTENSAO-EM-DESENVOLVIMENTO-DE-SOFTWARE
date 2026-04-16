@@ -1,0 +1,172 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f6;
+}
+
+/* --- CABEÇALHO (MENU) --- */
+.faixa-topo {
+    background-color: #0A0E3E;
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.faixa-topo nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.faixa-topo a {
+    color: #E2B4F5;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.faixa-topo a:hover {
+    color: #fff;
+}
+
+/* --- SEÇÃO DE VÍDEO (HERO) --- */
+.hero-video {
+    position: relative;
+    height: 70vh; /* Aumentado para dar mais destaque */
+    overflow: hidden;
+    background-color: #0A0E3E; /* Cor de fundo caso o vídeo falhe */
+}
+
+.video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Camada escura sobre o vídeo para facilitar a leitura do texto */
+.hero-video::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(10, 14, 62, 0.5); 
+    z-index: 1;
+}
+
+.overlay-video { 
+    z-index: 2; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
+}
+
+.overlay-video h1 { font-size: 42px; margin-bottom: 15px; }
+.overlay-video p { font-size: 20px; margin-bottom: 25px; }
+
+/* Botão de Chamada para Ação */
+.btn-cta {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #E2B4F5;
+    color: #0A0E3E;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: #fff;
+    transform: translateY(-3px);
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.conteudo-principal {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.container-texto h2 { color: #0A0E3E; font-size: 32px; }
+
+.cards-missao {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    flex: 1;
+    border-top: 6px solid #0A0E3E;
+    transition: 0.3s;
+}
+
+.card:hover { transform: translateY(-10px); }
+
+/* --- VALORES --- */
+.valores {
+    background-color: #0A0E3E;
+    color: white;
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.grid-valores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.item-valor {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* --- RODAPÉ --- */
+.rodape {
+    background-color: #050720;
+    color: #999;
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+}
+
+/* --- RESPONSIVIDADE (CELULARES) --- */
+@media (max-width: 768px) {
+    .faixa-topo { flex-direction: column; padding: 20px; }
+    .faixa-topo nav ul { margin-top: 15px; gap: 15px; }
+    
+    .hero-video { height: 50vh; }
+    .overlay-video h1 { font-size: 28px; }
+    
+    .cards-missao { flex-direction: column; }
+}
