@@ -5,9 +5,9 @@
 int opcao;
 
 typedef struct {
-    char nomeResponsavel;
-    float idEmpresa;
-    char cnpj;
+    char nomeResponsavel[100];
+    int idEmpresa;
+    char cnpj[20];
     char endereco[100];
     char telefone[15];
     char empresa[100];
@@ -35,6 +35,9 @@ typedef struct {
     float quantidade;
     float precoTotal;
 } pedido;
+
+pedido listaPedidos[100];
+int totalPedidos = 0;
 
 void erroEntrada() {
     printf("\nEntrada invalida! Por favor, tente novamente.\n");
@@ -95,8 +98,8 @@ void adicionarProduto() {
         for (int i = 0; i < totalProdutos; i++) {
             if (estoque[i].idProduto == idBusca) {
                 printf("\n--- Produto Encontrado ---\n");
-                printf("ID: %d | Nome: %s | Preco: R$%.2f\n", 
-                        estoque[i].idProduto, estoque[i].nomeProduto, estoque[i].preco);
+                printf("ID: %d | Nome: %s | Preco: R$%.2f | Quantidade: %d\n", 
+                        estoque[i].idProduto, estoque[i].nomeProduto, estoque[i].preco, estoque[i].quantidade);
                 int quantidadeAdicionar;
                 printf("Quantas unidades deseja adicionar? (0 para voltar): ");
                 if (scanf("%d", &quantidadeAdicionar) == 1) {
@@ -145,10 +148,10 @@ void baixaEstoque() {
                     } else if (quantidadeBaixa <= estoque[i].quantidade) {
                         estoque[i].quantidade -= quantidadeBaixa;
                         printf("Baixa realizada! Novo estoque de %s: %d unidades\n", 
-                                estoque[i].nomeProduto, estoque[i].quantidade);
+                                              estoque[i].nomeProduto, estoque[i].quantidade);
                     } else {
                         printf("Erro: Quantidade insuficiente em estoque!\n");
-                    }
+      }
                     encontrado = 1;
                 } else {
                     erroEntrada();
@@ -160,19 +163,91 @@ void baixaEstoque() {
     } while (!encontrado);
 }
 
-void cadastrarPedido() {}
+void cadastrarPedido() {
+    if (totalProdutos == 0) {
+        printf("\nO estoque esta vazio! cadastre um produto.\n");
+        return;
+    }
+
+    if (totalPedidos >= 100) {
+        printf("\nLimite de pedidos atingido!\n");
+        return;
+    }
+
+    int idBusca;
+    int encontrado = 0;
+
+    printf("\n--- Novo Pedido ---\n");
+    printf("Digite o ID do produto desejado: ");
+    if (scanf("%d", &idBusca) != 1) {
+        erroEntrada();
+        return;
+    }
+
+    for (int i = 0; i < totalProdutos; i++) {
+        if (estoque[i].idProduto == idBusca) {
+            encontrado = 1;
+            printf("Produto: %s | Preco: R$%.2f | Estoque: %d unidades\n", 
+                    estoque[i].nomeProduto, estoque[i].preco, estoque[i].quantidade);
+            int quantidadePedido;
+        if (estoque[i].quantidade <= 0) {
+            printf("Produto sem estoque disponivel!\n");
+            return;
+        }
+            printf("Quantas unidades deseja pedir? ");
+            if (scanf("%d", &quantidadePedido) != 1) {
+                erroEntrada();
+                return;
+            }
+            if (quantidadePedido <= 0) {
+                printf("Quantidade invalida!\n");
+                return;
+            }
+            if (quantidadePedido > estoque[i].quantidade) {
+                printf("Erro: Quantidade solicitada excede o estoque disponivel!\n");
+                return;
+            }
+
+            pedido p;
+            p.idPedido = totalPedidos + 1;
+            printf("Digite o nome do cliente: ");
+            scanf(" %[^\n]", p.nomeCliente);
+            p.idProduto = estoque[i].idProduto;
+            strcpy(p.nomeProduto, estoque[i].nomeProduto);
+            p.quantidade = quantidadePedido;
+            p.precoTotal = quantidadePedido * estoque[i].preco;
+
+            listaPedidos[totalPedidos] = p;
+            totalPedidos++;
+
+            estoque[i].quantidade -= quantidadePedido;
+
+            printf("\n--- Venda Finalizada com Sucesso ---\n");
+            printf("Pedido #%d registrado para o cliente: %s\n", p.idPedido, p.nomeCliente);
+            printf("Total a pagar: R$%.2f\n", p.precoTotal);
+            printf("Estoque atualizado! Novo saldo de %s: %d unidades\n", estoque[i].nomeProduto, estoque[i].quantidade);
+            
+            break;
+        }
+    }
+
+    if (!encontrado) {
+        printf("\nErro: Produto com ID %d nao encontrado.\n", idBusca);
+    }
+
+}
 
 void consultaEstoqueTotal() {
     if (totalProdutos == 0) {
         printf("\nO estoque esta vazio!\n");
         return;
     }
-    printf("\n%-5s | %-20s | %-15s | %-10s | %-10s\n", "ID", "NOME", "CATEGORIA", "PRECO", "PESO");
-    printf("--------------------------------------------------------------------------\n");
+    printf("\n%-5s | %-20s | %-15s | %-10s | %-10s | %-10s\n", "ID", "NOME", "CATEGORIA", "PRECO", "PESO", "QUANTIDADE");
+    printf("--------------------------------------------------------------------------------------\n");
     for (int i = 0; i < totalProdutos; i++) {
-        printf("%-5d | %-20s | %-15s | R$%-8.2f | %-8.2fkg\n", 
+        printf("%-5d | %-20s | %-15s | R$%-8.2f | %-8.2fkg | %-10d\n", 
                 estoque[i].idProduto, estoque[i].nomeProduto, estoque[i].categoria, 
-                estoque[i].preco, estoque[i].peso);
+                estoque[i].preco, estoque[i].peso, estoque[i].quantidade);
     }
 }
 
@@ -188,8 +263,8 @@ void consultaEstoquePorProduto() {
     for (int i = 0; i < totalProdutos; i++) {
         if (estoque[i].idProduto == idBusca) {
             printf("\n--- Produto Encontrado ---\n");
-            printf("ID: %d | Nome: %s | Preco: R$%.2f\n", 
-                    estoque[i].idProduto, estoque[i].nomeProduto, estoque[i].preco);
+            printf("ID: %d | Nome: %s | Preco: R$%.2f | Quantidade: %d\n", 
+                    estoque[i].idProduto, estoque[i].nomeProduto, estoque[i].preco, estoque[i].quantidade);
             encontrado = 1;
             break;
         }
@@ -246,6 +321,7 @@ int main() {
         printf("1. Cadastrar produto\n");
         printf("2. Consultar Estoque\n");
         printf("3. Movimentar Estoque\n");
+        printf("4. Cadastrar Pedido\n");
         printf("0. Sair\n");
         printf("Escolha: ");
         if (scanf("%d", &opcao) != 1) {
@@ -256,6 +332,7 @@ int main() {
             case 1: cadastrarProduto(); break;
             case 2: consultaEstoque(); break;
             case 3: MovimentarEstoque(); break;
+            case 4: cadastrarPedido(); break;
             case 0: printf("Saindo...\n"); break;
             default: printf("Opcao invalida!\n");
         }
