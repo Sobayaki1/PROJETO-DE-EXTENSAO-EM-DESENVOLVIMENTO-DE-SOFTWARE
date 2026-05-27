@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <windows.h>
 
 int opcao;
 
@@ -315,7 +314,6 @@ void MovimentarEstoque() {
 }
 
 int main() {
-    SetConsoleOutputCP(CP_UTF8);
     do {
         printf("\n=== MENU PRINCIPAL ===\n");
         printf("1. Cadastrar produto\n");
