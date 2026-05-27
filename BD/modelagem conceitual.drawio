@@ -1,0 +1,97 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Página-1" id="P2vBSgoVugst-RzegmY-">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-21" edge="1" parent="1" source="IUGGalzDx833I0iyFDfE-3" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="OYMX2gvE0Z7ATcPGi-4H-13" value="1:N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-30" edge="1" parent="1" source="IUGGalzDx833I0iyFDfE-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="OYMX2gvE0Z7ATcPGi-4H-17" value="1:N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-32" edge="1" parent="1" source="IUGGalzDx833I0iyFDfE-3" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" target="IUGGalzDx833I0iyFDfE-8" value="1:N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-39" edge="1" parent="1" source="IUGGalzDx833I0iyFDfE-3" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="IUGGalzDx833I0iyFDfE-9" value="1:N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IUGGalzDx833I0iyFDfE-3" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="&lt;br&gt;&lt;b&gt;&lt;span&gt;Produto&lt;/span&gt;&lt;br&gt;&lt;/b&gt;&lt;span&gt;----------------&lt;/span&gt;&lt;br&gt;&lt;span&gt;id_produto (PK)&lt;/span&gt;&lt;br&gt;&lt;span&gt;nome&lt;/span&gt;&lt;br&gt;&lt;span&gt;categoria&lt;/span&gt;&lt;br&gt;&lt;span&gt;preco&lt;/span&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="580" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-14" edge="1" parent="1" source="IUGGalzDx833I0iyFDfE-4" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="OYMX2gvE0Z7ATcPGi-4H-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-18" connectable="0" parent="OYMX2gvE0Z7ATcPGi-4H-14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Text" vertex="1">
+          <mxGeometry relative="1" x="-0.11" y="-3" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-19" connectable="0" parent="OYMX2gvE0Z7ATcPGi-4H-14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1:N" vertex="1">
+          <mxGeometry relative="1" x="-0.11" y="-5" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-20" connectable="0" parent="OYMX2gvE0Z7ATcPGi-4H-14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1:N" vertex="1">
+          <mxGeometry relative="1" x="-0.0071" y="-4" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IUGGalzDx833I0iyFDfE-4" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;align=center;" value="&lt;div style=&quot;&quot;&gt;&lt;div&gt;&lt;b&gt;Pedido&lt;/b&gt;&lt;/div&gt;&lt;div&gt;----------------&lt;/div&gt;&lt;div&gt;id_pedido (PK)&lt;/div&gt;&lt;div&gt;data&lt;/div&gt;&lt;div&gt;status&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="210" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="IUGGalzDx833I0iyFDfE-25" edge="1" parent="1" source="IUGGalzDx833I0iyFDfE-5" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="IUGGalzDx833I0iyFDfE-4" value="1::N">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="95" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IUGGalzDx833I0iyFDfE-5" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;align=center;" value="&lt;div style=&quot;&quot;&gt;&lt;pre class=&quot;overflow-visible! px-0!&quot; data-start=&quot;580&quot; data-end=&quot;642&quot;&gt;&lt;div class=&quot;relative w-full mt-4 mb-1&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl&quot;&gt;&lt;div class=&quot;h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;pe-11 pt-3&quot;&gt;&lt;div class=&quot;relative z-0 flex max-w-full&quot;&gt;&lt;div id=&quot;code-block-viewer&quot; dir=&quot;ltr&quot; class=&quot;q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼ5 ͼj&quot;&gt;&lt;div class=&quot;cm-scroller&quot;&gt;&lt;div class=&quot;cm-content q9tKkq_readonly&quot;&gt;&lt;b&gt;Cliente&lt;br&gt;&lt;/b&gt;----------------&lt;br&gt;id_cliente (PK)&lt;br&gt;nome&lt;br&gt;telefone&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-31" edge="1" parent="1" source="IUGGalzDx833I0iyFDfE-6" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="OYMX2gvE0Z7ATcPGi-4H-17" value="1:N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-33" edge="1" parent="1" source="IUGGalzDx833I0iyFDfE-6" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" target="IUGGalzDx833I0iyFDfE-8" value="1:N">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="860" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IUGGalzDx833I0iyFDfE-6" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;align=center;" value="&lt;div style=&quot;&quot;&gt;&lt;pre class=&quot;overflow-visible! px-0!&quot; data-start=&quot;580&quot; data-end=&quot;642&quot;&gt;&lt;div class=&quot;relative w-full mt-4 mb-1&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl&quot;&gt;&lt;div class=&quot;h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;pe-11 pt-3&quot;&gt;&lt;div class=&quot;relative z-0 flex max-w-full&quot;&gt;&lt;div id=&quot;code-block-viewer&quot; dir=&quot;ltr&quot; class=&quot;q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼ5 ͼj&quot;&gt;&lt;div class=&quot;cm-scroller&quot;&gt;&lt;div class=&quot;cm-content q9tKkq_readonly&quot;&gt;&lt;b&gt;Fornecedor&lt;br/&gt;----------------&lt;br/&gt;&lt;/b&gt;id_fornecedor (PK)&lt;br/&gt;nome&lt;br/&gt;cnpj&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="130" x="950" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-37" edge="1" parent="1" source="IUGGalzDx833I0iyFDfE-7" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" target="IUGGalzDx833I0iyFDfE-8" value="1:N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-38" edge="1" parent="1" source="IUGGalzDx833I0iyFDfE-7" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" target="IUGGalzDx833I0iyFDfE-9" value="1:N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IUGGalzDx833I0iyFDfE-7" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;align=center;direction=south;" value="&lt;div&gt;USUARIO&lt;/div&gt;&lt;div&gt;----------------&lt;/div&gt;&lt;div&gt;id_usuario (PK)&lt;/div&gt;&lt;div&gt;nome&lt;/div&gt;&lt;div&gt;email&lt;/div&gt;&lt;div&gt;senha&lt;/div&gt;&lt;div&gt;tipo&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="610" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="IUGGalzDx833I0iyFDfE-8" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;align=center;" value="&lt;pre class=&quot;overflow-visible! px-0!&quot; data-start=&quot;845&quot; data-end=&quot;909&quot;&gt;&lt;div class=&quot;relative w-full mt-4 mb-1&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl&quot;&gt;&lt;div class=&quot;h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;pe-11 pt-3&quot;&gt;&lt;div class=&quot;relative z-0 flex max-w-full&quot;&gt;&lt;div id=&quot;code-block-viewer&quot; dir=&quot;ltr&quot; class=&quot;q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼ5 ͼj&quot;&gt;&lt;div class=&quot;cm-scroller&quot;&gt;&lt;div class=&quot;cm-content q9tKkq_readonly&quot;&gt;ENTRADA&lt;br&gt;----------------&lt;br&gt;id_entrada (PK)&lt;br&gt;data&lt;br&gt;quantidade&lt;br&gt;id_fornecedor (FK)&lt;br&gt;id_produto (FK)&lt;br&gt;id_usuario (FK)&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;" vertex="1">
+          <mxGeometry height="130" width="130" x="752.5" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="IUGGalzDx833I0iyFDfE-9" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;align=center;" value="&lt;pre class=&quot;overflow-visible! px-0!&quot; data-start=&quot;845&quot; data-end=&quot;909&quot;&gt;&lt;div class=&quot;relative w-full mt-4 mb-1&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl&quot;&gt;&lt;div class=&quot;h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;pe-11 pt-3&quot;&gt;&lt;div class=&quot;relative z-0 flex max-w-full&quot;&gt;&lt;div id=&quot;code-block-viewer&quot; dir=&quot;ltr&quot; class=&quot;q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼ5 ͼj&quot;&gt;&lt;div class=&quot;cm-scroller&quot;&gt;&lt;div class=&quot;cm-content q9tKkq_readonly&quot;&gt;&lt;pre class=&quot;overflow-visible! px-0!&quot; data-start=&quot;929&quot; data-end=&quot;989&quot;&gt;&lt;div class=&quot;relative w-full mt-4 mb-1&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl&quot;&gt;&lt;div class=&quot;h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;pe-11 pt-3&quot;&gt;&lt;div class=&quot;relative z-0 flex max-w-full&quot;&gt;&lt;div id=&quot;code-block-viewer&quot; dir=&quot;ltr&quot; class=&quot;q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼ5 ͼj&quot;&gt;&lt;div class=&quot;cm-scroller&quot;&gt;&lt;div class=&quot;cm-content q9tKkq_readonly&quot;&gt;SAIDA&lt;br&gt;----------------&lt;br&gt;id_saida (PK)&lt;br&gt;data&lt;br&gt;quantidade&lt;br&gt;id_produto (FK)&lt;br&gt;id_usuario (FK)&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;" vertex="1">
+          <mxGeometry height="130" width="130" x="460" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-13" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;align=center;" value="&lt;div style=&quot;&quot;&gt;&lt;pre class=&quot;overflow-visible! px-0!&quot; data-start=&quot;580&quot; data-end=&quot;642&quot;&gt;&lt;div class=&quot;relative w-full mt-4 mb-1&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl&quot;&gt;&lt;div class=&quot;h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;pe-11 pt-3&quot;&gt;&lt;div class=&quot;relative z-0 flex max-w-full&quot;&gt;&lt;div id=&quot;code-block-viewer&quot; dir=&quot;ltr&quot; class=&quot;q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼ5 ͼj&quot;&gt;&lt;div class=&quot;cm-scroller&quot;&gt;&lt;div class=&quot;cm-content q9tKkq_readonly&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;ItemPedido&lt;br&gt;&lt;/b&gt;----------&lt;br&gt;id_item (PK)&lt;br&gt;id_pedido (FK )&lt;br&gt;id_produto (FK)&lt;br&gt;quantidade&lt;br&gt;preco_unitario&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="390" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-15" edge="1" parent="1" source="IUGGalzDx833I0iyFDfE-3" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="IUGGalzDx833I0iyFDfE-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-17" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;align=center;" value="&lt;div style=&quot;&quot;&gt;&lt;pre class=&quot;overflow-visible! px-0!&quot; data-start=&quot;580&quot; data-end=&quot;642&quot;&gt;&lt;div class=&quot;relative w-full mt-4 mb-1&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl&quot;&gt;&lt;div class=&quot;h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;pe-11 pt-3&quot;&gt;&lt;div class=&quot;relative z-0 flex max-w-full&quot;&gt;&lt;div id=&quot;code-block-viewer&quot; dir=&quot;ltr&quot; class=&quot;q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼ5 ͼj&quot;&gt;&lt;div class=&quot;cm-scroller&quot;&gt;&lt;div class=&quot;cm-content q9tKkq_readonly&quot;&gt;&lt;b&gt;fornecedor produto&lt;/b&gt;&lt;br&gt;----------------&lt;br&gt;id_fornecedor (FK)&lt;br&gt;id_produto (FK)&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="125" width="125" x="745" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-24" edge="1" parent="1" source="IUGGalzDx833I0iyFDfE-8" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" target="IUGGalzDx833I0iyFDfE-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMX2gvE0Z7ATcPGi-4H-36" edge="1" parent="1" source="IUGGalzDx833I0iyFDfE-9" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" target="IUGGalzDx833I0iyFDfE-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
