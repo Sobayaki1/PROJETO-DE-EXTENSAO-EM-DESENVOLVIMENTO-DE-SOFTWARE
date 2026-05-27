@@ -3,6 +3,7 @@
 
 int opcao;
 
+// Estrutura para guardar os dados da nossa empresa/remetente
 typedef struct {
     char nomeResponsavel[100];
     int idEmpresa;
@@ -13,19 +14,22 @@ typedef struct {
     char email[100];
 } remetente;
 
+// Estrutura com as propriedades essenciais de cada produto
 typedef struct {
     int idProduto;
     char nomeProduto[100];
-    char categoria[100];
+    char category[100];
     float preco;
     float peso;
     float cubagem;
     int quantidade;
 } produto;
 
+// Nosso estoque físico simulado por um array (limite de 100 tipos de produtos)
 produto estoque[100];
 int totalProdutos = 0;
 
+// Estrutura para registrar as vendas/pedidos dos clientes
 typedef struct {
     int idPedido;
     char nomeCliente[100];
@@ -35,21 +39,26 @@ typedef struct {
     float precoTotal;
 } pedido;
 
+// Histórico para armazenar os pedidos realizados
 pedido listaPedidos[100];
 int totalPedidos = 0;
 
+// Função auxiliar para limpar o buffer do teclado e tratar erros de digitação do usuário
 void erroEntrada() {
     printf("\nEntrada invalida! Por favor, tente novamente.\n");
     while (getchar() != '\n');
 }
 
+// Cria um novo produto no sistema com ID automático, validando as entradas numéricas
 void cadastrarProduto() {
     produto p;
-    p.idProduto = totalProdutos + 1;
+    p.idProduto = totalProdutos + 1; // ID gerado automaticamente com base no total atual
     printf("Digite o nome do produto: ");
     scanf(" %[^\n]", p.nomeProduto);
     printf("Categoria: ");
     scanf(" %[^\n]", p.categoria);
+    
+    // Loops 'do-while' para garantir que o usuário digite valores numéricos válidos
     do {
         printf("Preco: ");
         if (scanf("%f", &p.preco) != 1) {
@@ -74,12 +83,14 @@ void cadastrarProduto() {
             break;
         }
     } while (1);
-    p.quantidade = 0;
+    
+    p.quantidade = 0; // Todo produto novo começa com estoque zerado
     estoque[totalProdutos] = p;
     totalProdutos++;
     printf("Produto cadastrado com sucesso!\n");
 }
 
+// Adiciona unidades ao estoque de um produto já cadastrado (Entrada de mercadoria)
 void adicionarProduto() {
     if (totalProdutos == 0) {
         printf("\nO estoque esta vazio! Cadastre um produto primeiro.\n");
@@ -94,6 +105,7 @@ void adicionarProduto() {
             erroEntrada();
             continue;
         }
+        // Varre o array procurando o ID correspondente
         for (int i = 0; i < totalProdutos; i++) {
             if (estoque[i].idProduto == idBusca) {
                 printf("\n--- Produto Encontrado ---\n");
@@ -105,7 +117,7 @@ void adicionarProduto() {
                     if (quantidadeAdicionar == 0) {
                         printf("Operacao cancelada.\n");
                     } else {
-                        estoque[i].quantidade += quantidadeAdicionar;
+                        estoque[i].quantidade += quantidadeAdicionar; // Soma as novas unidades ao saldo atual
                         printf("Quantidade atualizada! Novo estoque de %s: %d unidades\n", 
                                 estoque[i].nomeProduto, estoque[i].quantidade);
                     }
@@ -120,6 +132,7 @@ void adicionarProduto() {
     } while (!encontrado);
 }
 
+// Remove unidades do estoque manualmente (Útil para perdas, avarias ou ajustes)
 void baixaEstoque() {
     int idBusca;
     int encontrado;
@@ -145,12 +158,12 @@ void baixaEstoque() {
                     if (quantidadeBaixa == 0) {
                         printf("Operacao cancelada.\n");
                     } else if (quantidadeBaixa <= estoque[i].quantidade) {
-                        estoque[i].quantidade -= quantidadeBaixa;
+                        estoque[i].quantidade -= quantidadeBaixa; // Deduz a quantidade do estoque
                         printf("Baixa realizada! Novo estoque de %s: %d unidades\n", 
                                               estoque[i].nomeProduto, estoque[i].quantidade);
                     } else {
                         printf("Erro: Quantidade insuficiente em estoque!\n");
-      }
+                    }
                     encontrado = 1;
                 } else {
                     erroEntrada();
@@ -162,6 +175,7 @@ void baixaEstoque() {
     } while (!encontrado);
 }
 
+// Realiza a venda de um produto: valida estoque, calcula preço total e abate do saldo físico
 void cadastrarPedido() {
     if (totalProdutos == 0) {
         printf("\nO estoque esta vazio! cadastre um produto.\n");
@@ -189,10 +203,10 @@ void cadastrarPedido() {
             printf("Produto: %s | Preco: R$%.2f | Estoque: %d unidades\n", 
                     estoque[i].nomeProduto, estoque[i].preco, estoque[i].quantidade);
             int quantidadePedido;
-        if (estoque[i].quantidade <= 0) {
-            printf("Produto sem estoque disponivel!\n");
-            return;
-        }
+            if (estoque[i].quantidade <= 0) {
+                printf("Produto sem estoque disponivel!\n");
+                return;
+            }
             printf("Quantas unidades deseja pedir? ");
             if (scanf("%d", &quantidadePedido) != 1) {
                 erroEntrada();
@@ -207,6 +221,7 @@ void cadastrarPedido() {
                 return;
             }
 
+            // Monta o registro do pedido se todas as validações passarem
             pedido p;
             p.idPedido = totalPedidos + 1;
             printf("Digite o nome do cliente: ");
@@ -214,12 +229,12 @@ void cadastrarPedido() {
             p.idProduto = estoque[i].idProduto;
             strcpy(p.nomeProduto, estoque[i].nomeProduto);
             p.quantidade = quantidadePedido;
-            p.precoTotal = quantidadePedido * estoque[i].preco;
+            p.precoTotal = quantidadePedido * estoque[i].preco; // Multiplica quantidade pelo preço unitário
 
-            listaPedidos[totalPedidos] = p;
+            listaPedidos[totalPedidos] = p; // Salva o pedido no nosso histórico de vendas
             totalPedidos++;
 
-            estoque[i].quantidade -= quantidadePedido;
+            estoque[i].quantidade -= quantidadePedido; // Dá baixa automática no estoque por conta da venda
 
             printf("\n--- Venda Finalizada com Sucesso ---\n");
             printf("Pedido #%d registrado para o cliente: %s\n", p.idPedido, p.nomeCliente);
@@ -233,9 +248,9 @@ void cadastrarPedido() {
     if (!encontrado) {
         printf("\nErro: Produto com ID %d nao encontrado.\n", idBusca);
     }
-
 }
 
+// Subfunção para listar de forma tabular absolutamente tudo o que está cadastrado no estoque
 void consultaEstoqueTotal() {
     if (totalProdutos == 0) {
         printf("\nO estoque esta vazio!\n");
@@ -250,6 +265,7 @@ void consultaEstoqueTotal() {
     }
 }
 
+// Subfunção para buscar e exibir os dados detalhados de um produto específico filtrando por ID
 void consultaEstoquePorProduto() {
     int idBusca;
     int encontrado = 0;
@@ -271,6 +287,7 @@ void consultaEstoquePorProduto() {
     if (!encontrado) printf("\nErro: Produto com ID %d nao encontrado.\n", idBusca);
 }
 
+// Menu intermediário para o usuário escolher entre a listagem geral ou busca individual
 void consultaEstoque() {
     int op;
     do {
@@ -292,6 +309,7 @@ void consultaEstoque() {
     } while(op != 0);
 }
 
+// Menu intermediário para centralizar as operações de entrada e saída física de mercadorias
 void MovimentarEstoque() {
     int busca;
     do {
@@ -313,6 +331,7 @@ void MovimentarEstoque() {
     } while(busca != 0);
 }
 
+// Ponto de entrada do programa. Controla o fluxo principal através do switch-case dentro do loop global
 int main() {
     do {
         printf("\n=== MENU PRINCIPAL ===\n");
