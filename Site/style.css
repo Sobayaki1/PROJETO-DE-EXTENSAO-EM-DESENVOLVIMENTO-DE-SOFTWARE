@@ -1,30 +1,30 @@
-/* --- CONFIGURAÇÕES GERAIS --- */
+/* --- CONFIGURAÇÕES GERAIS E RESET --- */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f7f6;
-}
-h2 {
-    font-size: 40px; /* Ajuste o número conforme o tamanho que desejar */
+    background-color: #f4f7f6; /* Tom de fundo levemente cinza para suavizar a leitura */
 }
 
-/* --- CABEÇALHO (MENU) --- */
+h2 {
+    font-size: 40px;
+}
+
+/* --- CABEÇALHO FIXO (MENU) --- */
 .faixa-topo {
-    background-color: #0A0E3E;
+    background-color: #0A0E3E; /* Azul escuro corporativo */
     color: white;
     padding: 15px 5%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Separa a logo à esquerda e links à direita */
     align-items: center;
-    position: sticky;
+    position: sticky; /* Mantém o menu grudado no topo ao rolar a página */
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Garante que o menu sobreponha qualquer elemento */
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
-
 
 .logo img {
     height: 65px; 
@@ -32,42 +32,42 @@ h2 {
     display: block; 
 }
 
-
 .faixa-topo nav ul {
-    list-style: none;
+    list-style: none; /* Remove as bolinhas da lista */
     display: flex;
-    gap: 25px;
+    gap: 25px; /* Espaçamento entre os itens do menu */
     margin: 0;
     padding: 0;
 }
 
 .faixa-topo a {
-    color: #E2B4F5;
+    color: #E2B4F5; /* Lilás claro para dar contraste */
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
-    transition: 0.3s;
+    transition: 0.3s; /* Transição suave no efeito hover */
 }
 
+/* Muda a cor do link para branco total ao passar o mouse */
 .faixa-topo a:hover {
     color: #fff;
 }
 
-/* --- SEÇÃO DE VÍDEO (HERO) --- */
+/* --- SEÇÃO DE VÍDEO INTRODUTÓRIO (HERO) --- */
 .hero-video {
     position: relative;
-    height: 70vh; /* Aumentado para dar mais destaque */
+    height: 70vh; /* Ocupa 70% da altura visível da tela */
     overflow: hidden;
-    background-color: #0A0E3E; /* Cor de fundo caso o vídeo falhe */
+    background-color: #0A0E3E;
 }
 
 .video-bg {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Faz o vídeo preencher todo o container sem distorcer */
 }
 
-/* Camada escura sobre o vídeo para facilitar a leitura do texto */
+/* Camada escura semitransparente sobreposta ao vídeo para leitura do texto */
 .hero-video::after {
     content: "";
     position: absolute;
@@ -76,12 +76,13 @@ h2 {
     z-index: 1;
 }
 
+/* Container do texto que flutua exatamente no meio do vídeo */
 .overlay-video { 
     z-index: 2; 
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Centralização perfeita nos eixos X e Y */
     color: white;
     text-align: center;
     width: 90%;
@@ -92,7 +93,7 @@ h2 {
 .overlay-video h1 { font-size: 42px; margin-bottom: 15px; }
 .overlay-video p { font-size: 20px; margin-bottom: 25px; }
 
-/* Botão de Chamada para Ação */
+/* Botão de Destaque (Call to Action) */
 .btn-cta {
     display: inline-block;
     padding: 12px 30px;
@@ -106,7 +107,7 @@ h2 {
 
 .btn-cta:hover {
     background-color: #fff;
-    transform: translateY(-3px);
+    transform: translateY(-3px); /* Efeito suave de subida ao passar o mouse */
 }
 
 /* --- CONTEÚDO PRINCIPAL --- */
@@ -117,6 +118,7 @@ h2 {
 
 .container-texto h2 { color: #0A0E3E; font-size: 32px; }
 
+/* Flexbox para alinhar os cards institucionais de Missão e Visão */
 .cards-missao {
     display: flex;
     gap: 30px;
@@ -129,13 +131,13 @@ h2 {
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     flex: 1;
-    border-top: 6px solid #0A0E3E;
+    border-top: 6px solid #0A0E3E; /* Detalhe colorido na borda superior */
     transition: 0.3s;
 }
 
 .card:hover { transform: translateY(-10px); }
 
-/* --- VALORES --- */
+/* --- BLOCO DE VALORES --- */
 .valores {
     background-color: #0A0E3E;
     color: white;
@@ -143,20 +145,21 @@ h2 {
     text-align: center;
 }
 
+/* Grid responsivo para listar os valores da empresa */
 .grid-valores {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Organiza colunas automaticamente conforme o espaço */
     gap: 20px;
     margin-top: 30px;
 }
 
 .item-valor {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1); /* Fundo branco sutil com transparência */
     padding: 15px;
     border-radius: 5px;
 }
 
-/* --- RODAPÉ --- */
+/* --- RODAPÉ INSTITUCIONAL --- */
 .rodape {
     background-color: #050720;
     color: #999;
@@ -165,18 +168,18 @@ h2 {
     font-size: 14px;
 }
 
-/* --- RESPONSIVIDADE (CELULARES) --- */
+/* --- REGRAS DE MEDIA QUERIES (RESPONSIVIDADE EM CELULARES) --- */
 @media (max-width: 768px) {
+    /* Empilha o menu na vertical se a tela for pequena */
     .faixa-topo { flex-direction: column; padding: 20px; }
     .faixa-topo nav ul { margin-top: 15px; gap: 15px; }
-    
     .hero-video { height: 50vh; }
     .overlay-video h1 { font-size: 28px; }
-    
+    /* Empilha os cards de Missão e Visão na vertical */
     .cards-missao { flex-direction: column; }
 }
 
-/* --- PÁGINA DE SERVIÇOS --- */
+/* --- GRID DE EXIBIÇÃO DE SERVIÇOS / PORTFÓLIO --- */
 .grid-servicos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -185,8 +188,8 @@ h2 {
 }
 
 .card-servico {
-    background-color: #6A1B9A; /* Tom de Roxo (Você pode alterar depois) */
-    color: white; /* Fonte Branca conforme pedido */
+    background-color: #6A1B9A; /* Roxo vibrante */
+    color: white; 
     padding: 25px;
     border-radius: 10px;
     text-align: left;
@@ -194,12 +197,73 @@ h2 {
     transition: 0.3s;
 }
 
-.card-servico h3 {
-    margin-top: 0;
-    color: #E2B4F5; /* Um roxo clarinho para o título destacar */
+.card-servico h3 { margin-top: 0; color: #E2B4F5; }
+/* Efeito de zoom e escurecimento do card ao passar o mouse */
+.card-servico:hover { transform: scale(1.05); background-color: #4A148C; }
+
+/* --- FOLHA DE ESTILOS DO POP-UP (MODAL) --- */
+.modal {
+    display: none; /* Oculto por padrão, ativado via JavaScript */
+    position: fixed; 
+    z-index: 2000; 
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.7); /* Fundo preto desmaiado cobrindo o site */
 }
 
-.card-servico:hover {
-    transform: scale(1.05);
-    background-color: #4A148C; /* Roxo mais escuro ao passar o mouse */
+/* Caixa central branca do conteúdo do pop-up */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    text-align: center;
 }
+
+/* Botão de Fechar (X) no topo direito */
+.close {
+    position: absolute; right: 20px; top: 10px;
+    font-size: 28px; cursor: pointer; color: #6A1B9A;
+}
+
+.modal-body h2 { color: #0A0E3E; font-size: 24px; margin-bottom: 10px; }
+.modal-body p { color: #666; font-size: 14px; margin-bottom: 20px; }
+
+/* Campos de entrada de texto no formulário */
+.modal-body input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box; /* Garante que o padding não estoure o tamanho do box */
+}
+
+/* Botão padrão do modal (Roxo) */
+.btn-create {
+    width: 100%;
+    padding: 12px;
+    background-color: #6A1B9A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Botão customizado do WhatsApp (Verde) */
+.btn-whatsapp {
+    width: 100%;
+    padding: 12px;
+    background-color: #02ff5e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.divisor { margin: 15px 0; color: #aaa; font-weight: bold; }

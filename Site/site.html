@@ -8,21 +8,20 @@
 </head>
 <body>
 
-   <header class="faixa-topo">
-    <div class="logo">
-        <img src="logoatlas.jpg.jpeg" alt="Atlas Distribuição">
-    </div>
-   <nav>
-    <ul>
-        <li><a href="site.html">Home</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li> 
-        <li><a href="servicos.html">Serviços</a></li>
-        <!-- <li><a href="#">Contato</a></li> -->
-    </ul>
-</nav>
-</header>
-
-
+    <header class="faixa-topo">
+        <div class="logo">
+            <img src="logoatlas.jpg.jpeg" alt="Atlas Distribuição">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="site.html">Home</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li> 
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="portfolio.html">Portfólio</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
         <section class="hero-video">
@@ -32,7 +31,7 @@
             <div class="overlay-video">
                 <h1>Logística Inteligente, Entrega Eficiente</h1>
                 <p>Otimizando o fluxo de produtos com rapidez e controle total de estoque.</p>
-                <a href="#" class="btn-cta">Saiba Mais</a>
+                <a href="javascript:void(0)" class="btn-cta" onclick="abrirModal()">Saiba Mais</a>
             </div>
         </section>
 
@@ -79,6 +78,61 @@
         <p>&copy; 2026 Atlas Distribuição. Todos os direitos reservados.</p>
         <p>Logística, Armazenamento e Distribuição.</p>
     </footer>
+
+    <div id="meuModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <div class="modal-body">
+                <img src="logoatlas.jpg.jpeg" alt="Logo Atlas" style="height: 60px; width: auto; margin-bottom: 20px;">
+
+                <div id="tela-escolha">
+                    <h2>Como deseja prosseguir?</h2>
+                    <p>Escolha uma das opções abaixo para entrar em contato ou receber novidades.</p>
+                    <button class="btn-create" onclick="mostrarTela('tela-email')">Receber ofertas por E-mail</button>
+                    <div class="divisor">ou</div>
+                    <a href="https://whatsapp.com" target="_blank" style="text-decoration: none;">
+                        <button class="btn-whatsapp">Falar no WhatsApp</button>
+                    </a>
+                </div>
+
+                <div id="tela-email" style="display: none;">
+                    <h2>Quase lá!</h2>
+                    <p>Insira seu melhor e-mail para receber nossas ofertas exclusivas.</p>
+                    <input type="email" id="campo-email" placeholder="Seu e-mail aqui...">
+                    <button class="btn-create" onclick="alert('E-mail cadastrado!')">Cadastrar e-mail</button>
+                    <p onclick="mostrarTela('tela-escolha')" style="color: #6A1B9A; cursor: pointer; margin-top: 15px; font-weight: bold; font-size: 14px;">← Voltar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Exibe o modal na tela mudando o display para block
+        function abrirModal() {
+            document.getElementById("meuModal").style.display = "block";
+            mostrarTela('tela-escolha'); // Garante que abra sempre na primeira tela
+        }
+
+        // Esconde o modal alterando o display para none
+        function fecharModal() {
+            document.getElementById("meuModal").style.display = "none";
+        }
+
+        // Alterna a visibilidade das divs internas do modal (Tela Inicial x Formulário de E-mail)
+        function mostrarTela(idTela) {
+            document.getElementById('tela-escolha').style.display = 'none';
+            document.getElementById('tela-email').style.display = 'none';
+            document.getElementById(idTela).style.display = 'block';
+        }
+
+        // Fecha o modal caso o usuário clique na área escura fora da caixinha branca
+        window.onclick = function(event) {
+            let modal = document.getElementById("meuModal");
+            if (event.target == modal) {
+                fecharModal();
+            }
+        }
+    </script>
 
 </body>
 </html>
